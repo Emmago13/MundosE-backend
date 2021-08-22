@@ -9,9 +9,16 @@
         <title>@yield('title')</title>
     </head>
     <body>
-        {{-- @include('components.header') --}}
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container">
+                  <a class="navbar-brand" href="{{ route("home") }}">
+                    <img src="{{ asset('storage/img/top-logo.svg') }}" alt="" width="100%" height="100%">
+                  </a>
+                </div>
+            </nav>
+        </header>
         <div>
-            {{-- @include('components.alert') --}}
             @yield('content')
         </div>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
