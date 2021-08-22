@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\About;
+use App\Mail\AboutMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
-class UserController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $response['abouts'] = About::all();
     }
 
     /**
@@ -34,7 +37,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except("_token");
+        About::insert($data);
     }
 
     /**
@@ -80,5 +84,16 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function saveApi(Request $request)
+    {
+        $data = $request->all();
+        try {
+            About::insert($data);
+            Mail::to($data["email"])->send(new AboutMail($data));
+        } catch (\Throwable $th) {
+            return response()->json(["message"=> "Se genero un error {$th->getMessage()}"],404);
+        }
+        return response()->json(["message"=> "Se creo el registro con exito"],201);
     }
 }
