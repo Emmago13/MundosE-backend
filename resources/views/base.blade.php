@@ -13,7 +13,7 @@
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container">
                   <a class="navbar-brand" href="{{ route("home") }}">
-                    <img src="{{ asset('storage/img/top-logo.svg') }}" alt="Logo" width="100%" height="100%">
+                    <img src="{{ asset('top-logo.svg') }}" alt="Logo" width="100%" height="100%">
                   </a>
                   <a href="#" class="btn btn-outline-light">Go to website</a>
                 </div>
