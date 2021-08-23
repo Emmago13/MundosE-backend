@@ -16,7 +16,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $response['abouts'] = About::all();
+        //
     }
 
     /**
@@ -37,8 +37,7 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except("_token");
-        About::insert($data);
+        //
     }
 
     /**

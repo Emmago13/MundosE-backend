@@ -16,9 +16,11 @@ class AboutMail extends Mailable
      *
      * @return void
      */
-    public function __construct($about_controller)
+    public $about;
+
+    public function __construct($aboutConstructor)
     {
-        $this->about_mail = $about_controller;
+        $this->about = $aboutConstructor;
     }
 
     /**
@@ -28,6 +30,7 @@ class AboutMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.about');
+        return $this->view('mail.about')
+                    ->subject('Mensaje recibido con exíto');
     }
 }

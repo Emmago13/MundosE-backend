@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <title>Mensaje Recibido con exíto</title>
+    <title>Mail</title>
 </head>
 <body>
-    <p>Hola! {{ $contact->name }}</p>
-    <p>mensaje recibido: {{ $about->message}}</p>
+    <p>Hola, {{ $about["name"] }}! </p>
+    <p>Tu mensaje fue recibido: {{ $about["message"]}}. Estaremos en contacto pronto..</p>
 </body>
 </html>
+
