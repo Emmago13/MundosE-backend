@@ -31,6 +31,7 @@ class AboutMail extends Mailable
     public function build()
     {
         return $this->view('mail.about')
-                    ->subject('Mensaje recibido con exíto');
+                    ->subject('Someone wants to contact you');
+                    // ->subject('Mensaje recibido con exíto');
     }
 }
