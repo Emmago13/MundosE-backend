@@ -16,7 +16,7 @@
                   <a class="navbar-brand" href="{{ route("home") }}">
                     <img src="{{ asset('top-logo.svg') }}" alt="Logo" width="100%" height="100%">
                   </a>
-                  <a href="https://egmyapp.netlify.app/" target="_blank" class="btn btn-outline-light">Go to website</a>
+                  <a href="https://egmyapp.herokuapp.com/" target="_blank" class="btn btn-outline-light">Go to website</a>
                 </div>
             </nav>
         </header>

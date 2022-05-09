@@ -89,8 +89,7 @@ class AboutController extends Controller
         $data = $request->all();
         try {
             About::insert($data);
-            // Mail::to($data["email"])->send(new AboutMail($data));
-            Mail::to(env("MAIL_TO"))->send(new AboutMail($data));
+            Mail::to($data["email"])->send(new AboutMail($data));
         } catch (\Throwable $th) {
             return response()->json(["message"=> "Se genero un error {$th->getMessage()}"],404);
         }
