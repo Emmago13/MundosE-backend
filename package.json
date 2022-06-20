@@ -18,9 +18,6 @@
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
     },
-    "engines": {
-        "node": "15.x"
-    },
     "dependencies": {
         "vercel-php": "^0.5.1"
     }
